@@ -19,4 +19,11 @@
 # wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
 
 def wave(people):
-    return
+    list1=[]
+
+    for i in range(len(people)):
+        list1.append(people[:i]+people[i].upper()+people[i+1:])
+    print(list1)
+people = input("Enter a string with lower cases: ")
+people =people.lower()
+wave(people)
