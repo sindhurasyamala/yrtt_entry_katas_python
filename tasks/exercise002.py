@@ -5,7 +5,5 @@
 def past(h,m,s):
     totals= (h*60*60)+(m*60)+s
     ms= 1000 * totals
-    print(ms)
-
     return ms
 past(1,0,0)
