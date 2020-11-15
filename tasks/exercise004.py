@@ -1,19 +1,31 @@
 # Move the first letter of each word to the end of it, then add "ay" 
 # to the end of the word. Leave punctuation marks untouched.
-
 def pig_it(text):
-    lis = text.split()
-
+    text = text.split()
     newlist = []
-    for i in lis:
-        i1 = i[1:] + i[:1] + 'ay'
+    newstring=''
+    alpha = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789"
+    counter = 0
+    for word in text:
+        wordlist = list(word)
 
-        newlist.append(i1)
+        for char in wordlist:
+            if char not in alpha:
+                counter += 1
 
-    newstr = ' '.join(newlist)
-    print("Converted string: ", end='')
-    print('"', newstr, '"')
+        newstr = ''.join(wordlist)
+
+        if counter == 0:
+            for i in newstr:
+                i1 = newstr[1:] + newstr[0] + 'ay'
+            newlist.append(i1)
+        else:
+            for i in newstr:
+                i1 = newstr[1: -counter] + newstr[0] + 'ay' + newstr[-counter:]
+            newlist.append(i1)
+
+    newstring = ' '.join(newlist)
+    return newstring
 
 
-str = input("Enter a sentence: ")
-pig_it(str)
+pig_it("Pig latin is cool")

@@ -26,8 +26,10 @@ def row_weights(arr):
     team2 = []
     sum1 = 0
     sum2 = 0
+    arr1 =[]
+
     for i in range(len(arr)):
-        if i % 2 == 1:
+        if i % 2 == 0:
             team1.append(arr[i])
         else:
             team2.append(arr[i])
@@ -35,9 +37,12 @@ def row_weights(arr):
     print("Team2= ", team2)
     for x in team1:
         sum1 = sum1 + x
+    arr1.append(sum1)
     print("1st team total= ", sum1)
     for y in team2:
         sum2 = sum2 + y
+    arr1.append(sum2)
     print("2nd team total = ", sum2)
+    return arr1
 
-row_weights([10,20,30,40,50])
+row_weights([80,1,2,3])

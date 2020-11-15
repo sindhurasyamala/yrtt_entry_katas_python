@@ -16,12 +16,12 @@ def repeats(arr):
             dict[ele] = 1
 
     for item in dict:
-        if (dict[item] > 1):
+        if (dict[item] <= 1):
             lis.append(item)
-    print("repeated numbers= ", lis)
+    # print("repeated numbers= ", lis)
     s = 0
     for x in lis:
         s = s + x
-    print("Repeated numbers total =", s)
+    return s
 
 repeats([4,5,7,4,5,8])
